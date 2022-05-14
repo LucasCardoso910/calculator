@@ -12,19 +12,19 @@ class Calculator extends StatefulWidget {
 
 class _CalculatorState extends State<Calculator> {
   final Memory memory = Memory();
-  
-  void _onPressed(String text) {
-    print(text);
+
+  void _onPressed(String command) {
+    setState(() {
+      memory.applyCommand(command);
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    const initialDisplay = Display(text: '0');
-
     return MaterialApp(
       home: Column(
         children: [
-          initialDisplay,
+          Display(text: memory.value),
           Keyboard(cb: _onPressed),
         ],
       ),
