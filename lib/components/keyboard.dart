@@ -15,9 +15,9 @@ class Keyboard extends StatelessWidget {
         children: [
           ButtonRow(
             buttons: [
-              Button(buttonLabel: 'AC', big: true),
+              Button.big(buttonLabel: 'AC'),
               Button(buttonLabel: '%'),
-              Button(buttonLabel: '/'),
+              Button.operation(buttonLabel: '/'),
             ],
           ),
           ButtonRow(
@@ -25,7 +25,7 @@ class Keyboard extends StatelessWidget {
               Button(buttonLabel: '7'),
               Button(buttonLabel: '8'),
               Button(buttonLabel: '9'),
-              Button(buttonLabel: 'x'),
+              Button.operation(buttonLabel: 'x'),
             ],
           ),
           ButtonRow(
@@ -33,7 +33,7 @@ class Keyboard extends StatelessWidget {
               Button(buttonLabel: '4'),
               Button(buttonLabel: '5'),
               Button(buttonLabel: '6'),
-              Button(buttonLabel: '-'),
+              Button.operation(buttonLabel: '-'),
             ],
           ),
           ButtonRow(
@@ -41,14 +41,14 @@ class Keyboard extends StatelessWidget {
               Button(buttonLabel: '1'),
               Button(buttonLabel: '2'),
               Button(buttonLabel: '3'),
-              Button(buttonLabel: '+'),
+              Button.operation(buttonLabel: '+'),
             ],
           ),
           ButtonRow(
             buttons: [
-              Button(buttonLabel: '0', big: true),
+              Button.big(buttonLabel: '0'),
               Button(buttonLabel: ','),
-              Button(buttonLabel: '='),
+              Button.operation(buttonLabel: '='),
             ],
           ),
         ],

@@ -18,6 +18,20 @@ class Button extends StatelessWidget {
     this.color = lightGray,
   }) : super(key: key);
 
+  const Button.big({
+    Key? key,
+    required this.buttonLabel,
+    this.big = true,
+    this.color = lightGray,
+  }) : super(key: key);
+
+  const Button.operation({
+    Key? key,
+    required this.buttonLabel,
+    this.big = false,
+    this.color = orange,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
