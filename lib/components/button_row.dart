@@ -8,11 +8,16 @@ class ButtonRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const spacer = SizedBox(width: 1);
+
     return Expanded(
       flex: 1,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: buttons,
+        children: buttons.fold(<Widget>[], (list, button) {
+          list.isEmpty ? list.add(button) : list.addAll([spacer, button]);
+          return list;
+        }),
       ),
     );
   }

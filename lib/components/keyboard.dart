@@ -10,6 +10,7 @@ class Keyboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size mediaSize = MediaQuery.of(context).size; // get screen size
+    const spacer = SizedBox(height: 1);
 
     return Container(
       height: mediaSize.height * 0.6, // set height as 60% of screen height
@@ -22,6 +23,7 @@ class Keyboard extends StatelessWidget {
               Button.operation(buttonLabel: '/', cb: cb),
             ],
           ),
+          spacer,
           ButtonRow(
             buttons: [
               Button(buttonLabel: '7', cb: cb),
@@ -30,6 +32,7 @@ class Keyboard extends StatelessWidget {
               Button.operation(buttonLabel: 'x', cb: cb),
             ],
           ),
+          spacer,
           ButtonRow(
             buttons: [
               Button(buttonLabel: '4', cb: cb),
@@ -38,6 +41,7 @@ class Keyboard extends StatelessWidget {
               Button.operation(buttonLabel: '-', cb: cb),
             ],
           ),
+          spacer,
           ButtonRow(
             buttons: [
               Button(buttonLabel: '1', cb: cb),
@@ -46,6 +50,7 @@ class Keyboard extends StatelessWidget {
               Button.operation(buttonLabel: '+', cb: cb),
             ],
           ),
+          spacer,
           ButtonRow(
             buttons: [
               Button.big(buttonLabel: '0', cb: cb),
