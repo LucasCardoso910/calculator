@@ -1,4 +1,5 @@
 import 'package:calculator/components/button.dart';
+import 'package:calculator/components/button_row.dart';
 import 'package:flutter/material.dart';
 
 class Keyboard extends StatelessWidget {
@@ -12,11 +13,27 @@ class Keyboard extends StatelessWidget {
       height: mediaSize.height * 0.6, // set height as 60% of screen height
       child: Column(
         children: [
-          Button(buttonLabel: '9'),
-          Button(buttonLabel: '9'),
-          Button(buttonLabel: '9'),
-          Button(buttonLabel: '9'),
-          Button(buttonLabel: '9'),
+          ButtonRow(
+            buttons: [
+              Button(buttonLabel: '7'),
+              Button(buttonLabel: '8'),
+              Button(buttonLabel: '9'),
+            ],
+          ),
+          ButtonRow(
+            buttons: [
+              Button(buttonLabel: '4'),
+              Button(buttonLabel: '5'),
+              Button(buttonLabel: '6'),
+            ],
+          ),
+          ButtonRow(
+            buttons: [
+              Button(buttonLabel: '1'),
+              Button(buttonLabel: '2'),
+              Button(buttonLabel: '3'),
+            ],
+          ),
         ],
       ),
     );
