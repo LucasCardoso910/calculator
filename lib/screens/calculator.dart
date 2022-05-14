@@ -5,16 +5,20 @@ import 'package:flutter/material.dart';
 class Calculator extends StatelessWidget {
   const Calculator({Key? key}) : super(key: key);
 
+  void _onPressed(String text) {
+    print(text);
+  }
+
   @override
   Widget build(BuildContext context) {
-    const appChildren = [
-      Display(text: '0'),
-      Keyboard(),
-    ];
+    const initialDisplay = Display(text: '0');
 
     return MaterialApp(
       home: Column(
-        children: appChildren,
+        children: [
+          initialDisplay,
+          Keyboard(cb: _onPressed),
+        ],
       ),
     );
   }

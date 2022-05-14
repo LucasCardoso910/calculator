@@ -3,7 +3,9 @@ import 'package:calculator/components/button_row.dart';
 import 'package:flutter/material.dart';
 
 class Keyboard extends StatelessWidget {
-  const Keyboard({Key? key}) : super(key: key);
+  final void Function(String) cb;
+
+  const Keyboard({Key? key, required this.cb}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,40 +17,40 @@ class Keyboard extends StatelessWidget {
         children: [
           ButtonRow(
             buttons: [
-              Button.big(buttonLabel: 'AC'),
-              Button(buttonLabel: '%'),
-              Button.operation(buttonLabel: '/'),
+              Button.big(buttonLabel: 'AC', color: Button.darkGray, cb: cb),
+              Button(buttonLabel: '%', color: Button.darkGray, cb: cb),
+              Button.operation(buttonLabel: '/', cb: cb),
             ],
           ),
           ButtonRow(
             buttons: [
-              Button(buttonLabel: '7'),
-              Button(buttonLabel: '8'),
-              Button(buttonLabel: '9'),
-              Button.operation(buttonLabel: 'x'),
+              Button(buttonLabel: '7', cb: cb),
+              Button(buttonLabel: '8', cb: cb),
+              Button(buttonLabel: '9', cb: cb),
+              Button.operation(buttonLabel: 'x', cb: cb),
             ],
           ),
           ButtonRow(
             buttons: [
-              Button(buttonLabel: '4'),
-              Button(buttonLabel: '5'),
-              Button(buttonLabel: '6'),
-              Button.operation(buttonLabel: '-'),
+              Button(buttonLabel: '4', cb: cb),
+              Button(buttonLabel: '5', cb: cb),
+              Button(buttonLabel: '6', cb: cb),
+              Button.operation(buttonLabel: '-', cb: cb),
             ],
           ),
           ButtonRow(
             buttons: [
-              Button(buttonLabel: '1'),
-              Button(buttonLabel: '2'),
-              Button(buttonLabel: '3'),
-              Button.operation(buttonLabel: '+'),
+              Button(buttonLabel: '1', cb: cb),
+              Button(buttonLabel: '2', cb: cb),
+              Button(buttonLabel: '3', cb: cb),
+              Button.operation(buttonLabel: '+', cb: cb),
             ],
           ),
           ButtonRow(
             buttons: [
-              Button.big(buttonLabel: '0'),
-              Button(buttonLabel: ','),
-              Button.operation(buttonLabel: '='),
+              Button.big(buttonLabel: '0', cb: cb),
+              Button(buttonLabel: ',', cb: cb),
+              Button.operation(buttonLabel: '=', cb: cb),
             ],
           ),
         ],

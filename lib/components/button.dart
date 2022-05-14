@@ -10,10 +10,12 @@ class Button extends StatelessWidget {
   final String buttonLabel;
   final bool big;
   final Color color;
+  final void Function(String) cb;
 
   const Button({
     Key? key,
     required this.buttonLabel,
+    required this.cb,
     this.big = false,
     this.color = lightGray,
   }) : super(key: key);
@@ -21,6 +23,7 @@ class Button extends StatelessWidget {
   const Button.big({
     Key? key,
     required this.buttonLabel,
+    required this.cb,
     this.big = true,
     this.color = lightGray,
   }) : super(key: key);
@@ -28,6 +31,7 @@ class Button extends StatelessWidget {
   const Button.operation({
     Key? key,
     required this.buttonLabel,
+    required this.cb,
     this.big = false,
     this.color = orange,
   }) : super(key: key);
@@ -44,7 +48,7 @@ class Button extends StatelessWidget {
           buttonLabel,
           style: labelFont,
         ),
-        onPressed: () {},
+        onPressed: () => cb(buttonLabel),
       ),
     );
   }
