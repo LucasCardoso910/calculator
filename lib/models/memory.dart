@@ -6,6 +6,7 @@ class Memory {
   String operation = '';
   String _value = '0';
   bool _wipeValue = true;
+  String lastCommand = '';
 
   void applyCommand(String command) {
     if (command == 'AC') {
@@ -16,10 +17,23 @@ class Memory {
     } else {
       _addDigit(command);
     }
+
+    lastCommand = command;
+  }
+
+  _isReplacingOperation(String command) {
+    return operations.contains(lastCommand) &&
+        operations.contains(command) &&
+        lastCommand != '=' &&
+        command != '=';
   }
 
   _setOperation(String newOperation) {
     bool isEqualSign = newOperation == '=';
+
+    if (_isReplacingOperation(operation)) {
+      operation = newOperation;
+    }
 
     if (bufferIndex == 0) {
       if (isEqualSign) return;
